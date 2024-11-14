@@ -16,15 +16,24 @@ const handleRequest = frames(async (ctx) => {
 
     return {
       image: (
-        <div tw="flex flex-col items-center p-5 bg-gray-100">
-          <h2 tw="mb-3 text-xl">Result: {result.toUpperCase()}</h2>
-          <p tw="text-2xl">{won ? "You won! 🎉" : "You lost! 😢"}</p>
-          <p>Your choice was: {choice.toUpperCase()}</p>
+        <div tw="flex flex-col items-center justify-center w-full h-full bg-gray-100 p-4">
+          <div tw="flex flex-col items-center">
+            <div tw="text-6xl mb-4">🪙</div>
+            <h2 tw="text-4xl font-bold text-gray-800 mb-2">
+              {result.toUpperCase()}
+            </h2>
+            <p tw="text-2xl text-gray-700">
+              {won ? "You Won! 🎉" : "You Lost! 😢"}
+            </p>
+            <p tw="text-xl text-gray-600 mt-2">
+              You chose: {choice.toUpperCase()}
+            </p>
+          </div>
         </div>
       ),
       buttons: [
         <Button action="post" target={{ query: { action: "menu" } }}>
-          Back to Menu
+          🔄 Play Again
         </Button>,
       ],
     };
@@ -32,9 +41,10 @@ const handleRequest = frames(async (ctx) => {
 
   return {
     image: (
-      <div tw="flex flex-col items-center p-5 bg-gray-100">
-        <h1 tw="mb-5 text-2xl font-bold">Coin Toss Game</h1>
-        <p tw="text-lg">Make your choice: Heads or Tails?</p>
+      <div tw="flex flex-col items-center justify-center w-full h-full bg-gray-100 p-4">
+        <div tw="text-6xl mb-4">🪙</div>
+        <h1 tw="text-4xl font-bold text-gray-800 mb-4">Coin Toss</h1>
+        <p tw="text-2xl text-gray-700 mb-2">Pick your side!</p>
       </div>
     ),
     buttons: [
@@ -42,13 +52,13 @@ const handleRequest = frames(async (ctx) => {
         action="post"
         target={{ query: { action: "play", choice: "heads" } }}
       >
-        Heads
+        HEADS
       </Button>,
       <Button
         action="post"
         target={{ query: { action: "play", choice: "tails" } }}
       >
-        Tails
+        TAILS
       </Button>,
     ],
   };
