@@ -6,13 +6,6 @@ export type GameResult = {
   won: boolean;
 };
 
-export type State = {
-  gameHistory: GameResult[];
-};
-
-export const frames = createFrames<State>({
+export const frames = createFrames({
   basePath: "/frames",
-  initialState: {
-    gameHistory: [],
-  },
 });
