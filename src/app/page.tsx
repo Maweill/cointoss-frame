@@ -10,8 +10,8 @@ export async function generateMetadata() {
         // provide full URL to your /frames endpoint
         new URL(
           "/frames",
-          process.env.VERCEL_URL
-            ? process.env.VERCEL_URL
+          process.env.NEXT_PUBLIC_VERCEL_URL
+            ? process.env.NEXT_PUBLIC_VERCEL_URL
             : "http://localhost:3000"
         )
       )),
