@@ -29,7 +29,11 @@ const handleRequest = frames(async (ctx) => {
         </div>
       ),
       buttons: [
-        <Button action="post" target={{ query: { action: "menu" } }}>
+        <Button
+          key="play again"
+          action="post"
+          target={{ query: { action: "menu" } }}
+        >
           🔄 Play Again
         </Button>,
       ],
@@ -46,12 +50,14 @@ const handleRequest = frames(async (ctx) => {
     ),
     buttons: [
       <Button
+        key="heads"
         action="post"
         target={{ query: { action: "play", choice: "heads" } }}
       >
         HEADS
       </Button>,
       <Button
+        key="tails"
         action="post"
         target={{ query: { action: "play", choice: "tails" } }}
       >
