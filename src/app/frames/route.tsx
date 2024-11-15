@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { Button } from "frames.js/next";
 import { frames } from "./frames";
 import { validateBetInput } from "../utils";
@@ -27,11 +28,7 @@ const handleRequest = frames(async (ctx) => {
           </div>
         ),
         buttons: [
-          <Button
-            key="play again"
-            action="post"
-            target={{ query: { action: "menu" } }}
-          >
+          <Button action="post" target={{ query: { action: "menu" } }}>
             🔄 Play Again
           </Button>,
         ],
@@ -75,11 +72,7 @@ const handleRequest = frames(async (ctx) => {
         </div>
       ),
       buttons: [
-        <Button
-          key="play again"
-          action="post"
-          target={{ query: { action: "menu" } }}
-        >
+        <Button action="post" target={{ query: { action: "menu" } }}>
           🔄 Play Again
         </Button>,
       ],
@@ -177,24 +170,18 @@ const handleRequest = frames(async (ctx) => {
     textInput: "Enter bet amount",
     buttons: [
       <Button
-        key="heads"
         action="post"
         target={{ query: { action: "play", choice: "heads" } }}
       >
         HEADS
       </Button>,
       <Button
-        key="tails"
         action="post"
         target={{ query: { action: "play", choice: "tails" } }}
       >
         TAILS
       </Button>,
-      <Button
-        key="history"
-        action="post"
-        target={{ query: { action: "history" } }}
-      >
+      <Button action="post" target={{ query: { action: "history" } }}>
         History
       </Button>,
     ],
