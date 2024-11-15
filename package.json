@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@frames.js/render": "^0.3.19",
     "frames.js": "^0.19.5",
     "next": "15.0.3",
     "react": "18.3.1",

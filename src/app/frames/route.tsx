@@ -1,5 +1,6 @@
 import { Button } from "frames.js/next";
 import { frames } from "./frames";
+import { FrameUI } from "@frames.js/render";
 
 const flipCoin = () => (Math.random() < 0.5 ? "heads" : "tails");
 
